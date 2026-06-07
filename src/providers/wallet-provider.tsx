@@ -1,22 +1,17 @@
 "use client";
 
-// ──────────────────────────────────────────────
-// Eventerz — Solana Wallet Provider
-// ──────────────────────────────────────────────
-
-import { useMemo } from "react";
-import {
-  ConnectionProvider,
-  WalletProvider,
-} from "@solana/wallet-adapter-react";
+import { useMemo, type ReactNode } from "react";
+import { ConnectionProvider, WalletProvider } from "@solana/wallet-adapter-react";
 import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
+import { PhantomWalletAdapter } from "@solana/wallet-adapter-phantom";
+import { SolflareWalletAdapter } from "@solana/wallet-adapter-solflare";
+import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
 import { clusterApiUrl } from "@solana/web3.js";
 
-// Import wallet adapter styles
 import "@solana/wallet-adapter-react-ui/styles.css";
 
 interface SolanaWalletProviderProps {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 export default function SolanaWalletProvider({
@@ -24,7 +19,13 @@ export default function SolanaWalletProvider({
 }: SolanaWalletProviderProps) {
   const endpoint = useMemo(() => clusterApiUrl("devnet"), []);
 
-  const wallets = useMemo(() => [], []);
+  const wallets = useMemo(
+    () => [
+      new PhantomWalletAdapter(),
+      new SolflareWalletAdapter({ network: WalletAdapterNetwork.Devnet }),
+    ],
+    []
+  );
 
   return (
     <ConnectionProvider endpoint={endpoint}>

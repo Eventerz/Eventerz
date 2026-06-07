@@ -1,13 +1,9 @@
-// ──────────────────────────────────────────────
-// Eventerz — Constants
-// ──────────────────────────────────────────────
-
 import { CategoryInfo } from "./types";
 
 export const APP_NAME = "Eventerz";
 export const APP_TAGLINE = "Everything is On-chain, Why Not Your Events?";
 export const APP_DESCRIPTION =
-  "A wallet-native event platform built on Solana. Discover events, RSVP on-chain, build your reputation.";
+  "A wallet-native event platform built on Solana. Discover events, RSVP on-chain, and build your reputation.";
 
 export const SIGN_MESSAGE = "Welcome to Eventerz";
 
@@ -75,7 +71,7 @@ export const FAQ_ITEMS = [
   {
     question: "Do I need a Solana wallet to use Eventerz?",
     answer:
-      "Yes, you'll need a Solana wallet like Phantom, Backpack, or Solflare. Connecting your wallet is how you authenticate and interact with the platform — no email or password required.",
+      "Yes, you'll need a Solana wallet like Phantom, Backpack, or Solflare. Connecting your wallet is how you authenticate and interact with the platform - no email or password required.",
   },
   {
     question: "Is it free to RSVP for events?",
@@ -95,7 +91,7 @@ export const FAQ_ITEMS = [
   {
     question: "What wallets are supported?",
     answer:
-      "We currently support Phantom, Backpack, and Solflare. More wallets will be added soon.",
+      "We currently support Phantom and Solflare in this build. Backpack and Jupiter can be added as soon as their adapters are installed.",
   },
   {
     question: "Is my data stored on-chain?",
@@ -147,7 +143,7 @@ export const HOW_IT_WORKS_STEPS = [
   {
     step: 1,
     title: "Connect Wallet",
-    description: "Link your Solana wallet — Phantom, Backpack, or Solflare.",
+    description: "Link your Solana wallet - Phantom, Solflare, or Backpack.",
     icon: "Wallet",
   },
   {
@@ -191,6 +187,6 @@ export const SOLANA_ADVANTAGES = [
   {
     title: "Rich Ecosystem",
     description:
-      "Tap into the Solana ecosystem — NFT tickets, SPL token gating, DAO governance, and more.",
+      "Tap into the Solana ecosystem - NFT tickets, SPL token gating, DAO governance, and more.",
   },
 ];

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useWallet } from "@solana/wallet-adapter-react";
 import { useEvents } from "@/providers/event-provider";
-import { CreateEventInput, EventCategory } from "@/lib/types";
+import { CreateEventInput } from "@/lib/types";
 import { CATEGORIES } from "@/lib/constants";
 import { Calendar, Clock, MapPin, Image as ImageIcon, Tag, AlignLeft, Type, Users } from "lucide-react";
 
@@ -295,11 +295,11 @@ export default function CreateEventForm() {
         </div>
       </div>
 
-      <div className="flex justify-end pt-4">
+      <div className="flex flex-col-reverse sm:flex-row sm:justify-end gap-3 pt-4">
         <button
           type="button"
           onClick={() => router.back()}
-          className="px-6 py-3 text-muted hover:text-foreground font-medium rounded-xl mr-4"
+          className="px-6 py-3 text-muted hover:text-foreground font-medium rounded-xl"
         >
           Cancel
         </button>
